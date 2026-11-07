@@ -13,6 +13,9 @@ def home():
 
 def run_bot():
     print("Bot polling started...")
+import time
+bot.delete_webhook(drop_pending_updates=True)
+time.sleep(2)
     bot.infinity_polling()
 
 @bot.message_handler(commands=['start'])
